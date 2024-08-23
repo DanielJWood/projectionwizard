@@ -49,6 +49,12 @@
 	</head>
 	<body>
 		<div id="container">
+			<div id="intro">
+				Hello! 👋 This is a fork of the wonderful <a href="https://projectionwizard.org/#">Projection Wizard</a>. I have modified it slightly, and added a section at the bottom where output parameters can easily be copied for use in a vector-clipping tool I am developing.<br>
+				<br>
+				Cheers!<br>
+				Dan from NPR
+			</div>
 			<div id="inputUIarea">
 				<img id="settings" src="figures/opts.png" height="22" align="left" title="Customize">
 				<div id="options_dialog" class="dialogtext" title="Projection Wizard Options">
@@ -56,9 +62,9 @@
 						<legend><h4>&nbsp;Angular units format&nbsp;</h4></legend>
 						<form id="ang_format">
 							<div id="ang_ops">
-								<input type="radio" name="ang_format" id="DMS" value="DMS" checked="checked" />
+								<input type="radio" name="ang_format" id="DMS" value="DMS"/>
 								<label for="DMS">	44&deg; 30' 15'' W&nbsp;&nbsp;&nbsp;&nbsp;</label>
-								<input type="radio" name="ang_format" id="DD" value="DD"/>
+								<input type="radio" name="ang_format" id="DD" value="DD" checked="checked"/>
 								<label for="DD">	–44.754305&deg;<br></label>
 							</div>
 						</form>
@@ -88,7 +94,7 @@
 					<fieldset>
 						<legend><h4>&nbsp;Preview map&nbsp;</h4></legend>
 						<div id="check_ops">
-							<input type="checkbox" id="showEextent" name="showEextent" />
+							<input type="checkbox" id="showEextent" name="showEextent" checked="checked" />
 							<label for="showEextent">Show geographic extent</label>
 						</div>
 						<div>
@@ -281,6 +287,7 @@
 				<div id="map"></div>
 			</div>
 			<div id="output">
+
 				<div id="printout"></div>
 				<div id="result" class="results"></div>
 				<div id="previewMap">
@@ -289,6 +296,12 @@
 				</div>
 				<div id="PROJ" class="dialogtext" title="PROJ string"></div>
 				<div id="WKT" class="dialogtext" title="Well-Known Text"></div>
+			</div>
+			<div id="output-for-clipping">
+				<h1>Vector clipping parameters</h1>
+				<p>Copy the below into your variables.txt file</p>
+				<textarea id='textAreaParams'>
+				</textarea>
 			</div>
 		</div>
 	</body>

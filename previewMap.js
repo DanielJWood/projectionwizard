@@ -11,6 +11,8 @@ var world110m, world50m;
 
 /***MAP DRAW FUNCTION FOR SMALL-SCALE***/
 function addWorldMapPreview(center, projection, currentlyDragging) {
+	var textAreaParams = document.getElementById("textAreaParams");
+	textAreaParams.innerHTML = "";
 	var activeDistortion = $('input[name=distortion]:checked').val();
 	
 	// Updates the active projection
@@ -90,6 +92,7 @@ function addMapPreview(center, currentlyDragging) {
 	
 	//adding class to split text and map preview
 	$("#result").addClass("results");
+	addClippingParams();
 }
 
 /* Setting a new projection with D3 */
@@ -591,4 +594,22 @@ function continueDrawingCanvasMap(world110m, world50m, lat0, lon0, projectionStr
 			context.closePath();
 		}
 	}
+}
+
+function addClippingParams() {
+
+    var lonmin = document.getElementById('lonmin').value;
+    var latmin = document.getElementById('latmin').value;
+    var lonmax = document.getElementById('lonmax').value;
+    var latmax = document.getElementById('latmax').value;
+    var coordinatesArray = `${lonmin}, ${latmin}, ${lonmax}, ${latmax}`;
+
+    var proj = document.getElementsByClassName("linkPROJ4")[0].getAttribute("onclick");
+    var match = proj.match(/"([^"]+)"/);
+    match = match ? match[1] : null;
+    
+    var text = `PROJECTION = "${match}"\nRAWBBOX = ${JSON.stringify(coordinatesArray)}`;
+
+	var textAreaParams = document.getElementById("textAreaParams");
+	textAreaParams.innerHTML = text;
 }
