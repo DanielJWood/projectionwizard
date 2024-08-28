@@ -608,7 +608,7 @@ function addClippingParams() {
     var match = proj.match(/"([^"]+)"/);
     match = match ? match[1] : null;
     
-    var text = `PROJECTION = "${match}"\nRAWBBOX = ${JSON.stringify(coordinatesArray)}`;
+    var text = `PROJECTION: "${match}"\nRAWBBOX: ${JSON.stringify(coordinatesArray)}`;
 
 	var textAreaParams = document.getElementById("textAreaParams");
 	textAreaParams.innerHTML = text;
