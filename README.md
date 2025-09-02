@@ -1,11 +1,11 @@
-# Projection Wizard (fork by Daniel Wood/NPR)
+# Projection Wizard (fork by Daniel Wood)
 
 Hello! 👋 This is a fork of the wonderful <a href="https://projectionwizard.org/#">Projection Wizard</a>. I have modified it slightly, and added a section at the bottom where output parameters can easily be copied for use in a forthcoming vector and raster clipping tool we are building.
 
 More TK!
 
 Cheers!<br>
-Dan from NPR
+Dan
 
 ## Installation
 
